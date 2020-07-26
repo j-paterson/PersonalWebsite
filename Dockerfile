@@ -20,4 +20,4 @@ EXPOSE 80
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
-COPY --from=builder /opt/jessepaterson/dist /var/www/html
+COPY --from=builder /opt/jessepaterson/build /var/www/html
