@@ -29,9 +29,9 @@ deploy-prod:
     - swarm
   stage: deploy
   script:
-    - docker stack rm $(echo $CI_PROJECT_NAME | sed 's/-docker//')
+    - docker stack rm $(echo $CI_PROJECT_NAME | sed 's/-docker//' | sed 's/\./-/')
     - sleep 15s
-    - docker stack deploy -c docker-compose.yml --with-registry-auth $(echo $CI_PROJECT_NAME | sed 's/-docker//')
+    - docker stack deploy -c docker-compose.yml --with-registry-auth $(echo $CI_PROJECT_NAME | sed 's/-docker//' | sed 's/\./-/')
   environment:
     name: production
     url: https://jessepaterson.com
