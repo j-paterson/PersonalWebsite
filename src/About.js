@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import AnimatedWrapper from "./AnimatedWrapper";
+import strivr from "./images/experience/STRIVR_LOGO.png";
+import ucbseal from "./images/experience/ucbseal.png";
+import cnr from "./images/experience/cnr.png"
+
 class AboutComponent extends Component {
   render() {
     return (
@@ -20,7 +24,7 @@ class AboutComponent extends Component {
           <h3 className="title"> MY WORK</h3>
           <div className="container">
             <div className='col-md-4'>
-               <img className="job-img" src="/images/experience/STRIVR_LOGO.png" alt="STRIVR Logo"></img>
+               <img className="job-img" src={strivr} alt="STRIVR Logo"></img>
             </div>
             <div className='col-md-8'>
               <h2 className="heading">UX Prototyping Engineer</h2>
@@ -53,7 +57,7 @@ class AboutComponent extends Component {
           </div>
           <div className="container">
             <div className='col-md-4'>
-                <img className="job-img img-reduction" src="/images/experience/ucbseal.png" alt="UC Berkeley Seal"></img>
+                <img className="job-img img-reduction" src={ucbseal} alt="UC Berkeley Seal"></img>
             </div>
             <div className='col-md-8'>
               <h2 className="heading">HCI Researcher</h2>
@@ -73,7 +77,7 @@ class AboutComponent extends Component {
           </div>
           <div className="container">
             <div className='col-md-4'>
-               <img className="job-img" src="/images/experience/cnr.png" alt="College of Natural Resources Logo"></img>
+               <img className="job-img" src={cnr} alt="College of Natural Resources Logo"></img>
             </div>
             <div className='col-md-8'>
               <h2 className="heading"> Web Developer</h2>

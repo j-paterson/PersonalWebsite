@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import nature from '../images/projects/nature/nature.jpeg';
 
 const nature_content =
 <div className="project-content">
@@ -28,7 +29,7 @@ const nature_content =
       during as a front-end developer for the CNR Web Team.
     </p>
 
-    <img className="img-center" src="/images/nature/nature.jpeg" width="400px" alt="planning"/><br/>
+    <img className="img-center" src={nature} width="400px" alt="planning"/><br/>
 
     <p>
       Originally, my assignments consisted of moving and redesigning massive quantities of content and users
