@@ -6,6 +6,8 @@ WORKDIR /opt/jessepaterson/
 
 # Get dependencies (Move package.json from the host to the current working directory)
 COPY package.json ./
+COPY package-lock.json ./
+
 RUN npm i
 
 # Copy the rest of the project from the host

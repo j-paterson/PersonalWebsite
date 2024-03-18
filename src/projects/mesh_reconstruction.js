@@ -1,5 +1,21 @@
 import React, { Component } from "react";
 
+import vector_field from '../images/projects/vmask/vector_field.png';
+import box_filter_convolution from '../images/projects/vmask/box_filter_convolution.png';
+import function_stretch from '../images/projects/vmask/function_stretch.png';
+import algorithm from '../images/projects/vmask/algorithm.png';
+import spheres from '../images/projects/vmask/spheres.png';
+import meme from '../images/projects/vmask/meme.jpg';
+import OctreeViz from '../images/projects/vmask/OctreeViz.png';
+import sphere_challenge from '../images/projects/vmask/sphere_challenge.png';
+import bunny_challenge from '../images/projects/vmask/bunny_challenge.png';
+import hand_challenge from '../images/projects/vmask/hand_challenge.png';
+import bunny_pointcloud from '../images/projects/vmask/bunny_pointcloud.png';
+import bunny_mesh from '../images/projects/vmask/bunny_mesh.png';
+import hand_mesh from '../images/projects/vmask/hand_mesh.png';
+import hand_mesh_shaded from '../images/projects/vmask/hand_mesh_shaded.png';
+import selfie from '../images/projects/vmask/selfie.png';
+
 const mesh_reconstruction_content =
 <div className="project-content">
   <h2 className="subheading">A point cloud to mesh converter</h2>
@@ -52,17 +68,17 @@ const mesh_reconstruction_content =
         <li className="no-list-style">
           <p>Each node of the Octree must have a function Fo assigned to it such that "the vector field V can be precisely and efficiently represented as the linear sum of the Fo." (<a href="http://hhoppe.com/poissonrecon.pdf">http://hhoppe.com/poissonrecon.pdf</a>)
           Essentially, the vector field will be made of a combination of these base functions shifted and scaled down according to the size of the node in the octree it corresponds to (number of points it contains).</p>
-          <img align="middle" className="invert" src="/images/vmask/vector_field.png" width="300px" alt="vector field"/>
+          <img align="middle" className="invert" src={vector_field} width="300px" alt="vector field"/>
           <p>These functions are defined as the n-th convolution of a box filter with itself, where n=3 in order to create a piecewise quadratic approximation to a Gaussian. This convolution is centered about the node o and stretched by the size of o.</p>
-          <img align="middle" className="invert" src="/images/vmask/box_filter_convolution.png" width="400px" alt="box filter convolution"/><br/>
-          <img align="middle" className="invert" src="/images/vmask/function_stretch.png" width="200px" alt="function"/>
+          <img align="middle" className="invert" src={box_filter_convolution} width="400px" alt="box filter convolution"/><br/>
+          <img align="middle" className="invert" src={function_stretch} width="200px" alt="function"/>
           <p>(Due to the central limit theorem, if you convolve a box filter with itself n times, as n goes to infinity the result approaches a Gaussian.)</p>
         </li>
         <li>
           <h4>Indicator Function</h4>
         </li>
         <li className="no-list-style">
-          <img className="img-float-right" align="middle" src="/images/vmask/algorithm.png" width="500px" alt="poisson reconstruction algorithm"/>
+          <img className="img-float-right" align="middle" src={algorithm} width="500px" alt="poisson reconstruction algorithm"/>
           <div className="indent">
             <p>
               According the Poisson Reconstruction algorithm, solving for the indicator function X involves ensuring that the projection of the Laplacian of X onto the space of base functions is closest to the projection of the divergence of the vector field.
@@ -87,7 +103,7 @@ const mesh_reconstruction_content =
           <p>We started testing using a number of geometric indicator functions and later switched to the averaged plane indicator
           function we developed in order to approximate the mesh of more complicated objects.</p>
           <p>Displayed below are several sphere tests at varying octree depths.</p>
-          <img align="middle" className="" src="/images/vmask/spheres.png" width="400px" alt="preliminary spheres"/>
+          <img align="middle" className="" src={spheres} width="400px" alt="preliminary spheres"/>
         </li>
       </ul>
       <h3>Challenges</h3>
@@ -99,7 +115,7 @@ const mesh_reconstruction_content =
               <p>We compiled over 20 pages of notes on resources and design decisions where we detailed the algorithm and explained to ourselves the mathematical concepts that were necessary to understand to implement the Poisson solution.</p>
             </li>
             <li className="no-list-style">
-              <img className="img-float-right" align="middle" src="/images/vmask/meme.jpg" width="250px" alt="And THIS is how you implement the Poisson Algorithm"/>
+              <img className="img-float-right" align="middle" src={meme} width="250px" alt="And THIS is how you implement the Poisson Algorithm"/>
             </li>
             <li>
               <p>We also reached out to Dr. Misha Kazhdan who was one of the three original authors of the Poisson Reconstruction Algorithm paper. We had several emails with him and he explained how we should approach the calculation of the indicator function.</p>
@@ -118,15 +134,15 @@ const mesh_reconstruction_content =
               <p>Originally, the Octree’s bounding boxes were not splitting correctly and it was necessary to visualize how these boxes were splitted to see which corners were being placed at the wrong location. We utilized an online 3D visualization tool to do this and inputted our Octree node’s corner points to see where things were going wrong. We adjusted the boundary box splitting accordingly.</p>
             </li>
             <li className="no-list-style">
-              <img className="img-center" align="middle" src="/images/vmask/OctreeViz.png" width="40%" alt="Octree visualisation"/>
+              <img className="img-center" align="middle" src={OctreeViz} width="40%" alt="Octree visualisation"/>
             </li>
             <li>
               <p>Additionally, our Octree was incorrectly specifying leaf nodes sometimes not subdividing down to the desired depth. This led to our marching cubes returning triangles with a large variance in size and position. This was debugged by observing these disproportionate triangles and realizing that these triangles could only ever be returned from leaf nodes, so these nodes must be at a higher depth than desired.</p>
             </li>
             <li className="no-list-style">
-              <img align="middle" src="/images/vmask/sphere_challenge.png" width="32%" alt="Sphere glitch"/>
-              <img align="middle" src="/images/vmask/bunny_challenge.png" width="30%" alt="Bunny model glitch"/>
-              <img align="middle" src="/images/vmask/hand_challenge.png" width="25%" alt="Hand model glitch"/>
+              <img align="middle" src={sphere_challenge} width="32%" alt="Sphere glitch"/>
+              <img align="middle" src={bunny_challenge} width="30%" alt="Bunny model glitch"/>
+              <img align="middle" src={hand_challenge} width="25%" alt="Hand model glitch"/>
             </li>
           </ul>
         </li>
@@ -176,13 +192,13 @@ const mesh_reconstruction_content =
         <ul className="no-list-style">
           <li className="subheading">Bunny Model: Pointcloud to Mesh</li>
           <li className="no-list-style">
-            <img align="middle" src="/images/vmask/bunny_pointcloud.png" width="680px" alt="Bunny point cloud"/>
-            <img align="middle" src="/images/vmask/bunny_mesh.png" width="680px" alt="Bunny mesh"/>
+            <img align="middle" src={bunny_pointcloud} width="680px" alt="Bunny point cloud"/>
+            <img align="middle" src={bunny_mesh} width="680px" alt="Bunny mesh"/>
           </li>
           <li className="subheading">Generated Hand Mesh: Shaded and Unshaded</li>
           <li className="no-list-style">
-            <img align="middle" src="/images/vmask/hand_mesh.png" width="680px" alt="Hand Mesh Unshaded"/>
-            <img align="middle" src="/images/vmask/hand_mesh_shaded.png" width="680px" alt="Hand Mesh Shaded"/>
+            <img align="middle" src={hand_mesh} width="680px" alt="Hand Mesh Unshaded"/>
+            <img align="middle" src={hand_mesh_shaded} width="680px" alt="Hand Mesh Shaded"/>
           </li>
         </ul>
         <iframe title="Final Presentation" allowfullscreen frameborder="0" height="617" src="https://www.youtube.com/embed/tohKA5zTeeU" width="790"></iframe>
@@ -251,7 +267,7 @@ const mesh_reconstruction_content =
         </ul>
         <p></p>
         <div>
-          <img align="middle" src="/images/vmask/selfie.png" width="300px" alt="Bryce working on the visualization in Oculus Medium"/>
+          <img align="middle" src={selfie} width="300px" alt="Bryce working on the visualization in Oculus Medium"/>
           <p>(Bryce making the visualization for our<br/>
           average plane indicator function in Medium!)</p>
         </div>

@@ -1,5 +1,40 @@
 import React, { Component } from "react";
 
+import part1 from '../images/projects/rasterizer/part1.png';
+import rate1 from '../images/projects/rasterizer/rate1.png';
+import rate4 from '../images/projects/rasterizer/rate4.png';
+import rate16 from '../images/projects/rasterizer/rate16.png';
+import robot from '../images/projects/rasterizer/robot.png';
+import myrobot from '../images/projects/rasterizer/myrobot.png';
+import triangle from '../images/projects/rasterizer/triangle.png';
+import colorhweel from '../images/projects/rasterizer/colorwheel.png';
+import nearest1 from '../images/projects/rasterizer/nearest1.png';
+import nearest16 from '../images/projects/rasterizer/nearest16.png';
+import bilinear1 from '../images/projects/rasterizer/bilinear1.png';
+import bilinear16 from '../images/projects/rasterizer/bilinear16.png';
+import lz_pn from '../images/projects/rasterizer/lz_pn.png';
+import lz_pl from '../images/projects/rasterizer/lz_pl.png';
+import ln_pn from '../images/projects/rasterizer/ln_pn.png';
+import ln_pl from '../images/projects/rasterizer/ln_pl.png';
+import tri from '../images/projects/rasterizer/tri.png';
+
+import decasteljau1 from '../images/projects/graphics_proj2/decasteljau1.png'
+import decasteljau2 from '../images/projects/graphics_proj2/decasteljau2.png'
+import bicubicbezier from '../images/projects/graphics_proj2/bicubicbezier.png'
+import part2 from '../images/projects/graphics_proj2/part2.png'
+import facenormals from '../images/projects/graphics_proj2/facenormals.png'
+import avgvertnormals from '../images/projects/graphics_proj2/avgvertnormals.png'
+import before4 from '../images/projects/graphics_proj2/before4.png';
+import after4 from '../images/projects/graphics_proj2/after4.png';
+import unaltered from '../images/projects/graphics_proj2/unaltered.png';
+import splits from '../images/projects/graphics_proj2/splits.png';
+import splitsnflips from '../images/projects/graphics_proj2/splitsnflips.png';
+import i6_1 from '../images/projects/graphics_proj2/6_1.png';
+import i6_2 from '../images/projects/graphics_proj2/6_2.png';
+import i6_3 from '../images/projects/graphics_proj2/6_3.png';
+import i6_4 from '../images/projects/graphics_proj2/6_4.png';
+import phong from '../images/projects/graphics_proj2/phong.png'
+
 const graphics_content =
 <div className="project-content">
   <h2 className="subheading">A variety of low level graphics projects</h2>
@@ -44,7 +79,7 @@ const graphics_content =
               being inside the triangle then has it's Color set to the Color specified.
           </p>
           <div className="section-images">
-              <img src="/images/rasterizer/part1.png" className="section-img"/>
+              <img src={part1} className="section-img"/>
           </div>
       </div>
 
@@ -74,9 +109,9 @@ const graphics_content =
             </p>
           </div>
           <div className="section-images">
-              <img src="/images/rasterizer/rate1.png" className="section-img2"/>
-              <img src="/images/rasterizer/rate4.png" className="section-img2"/>
-              <img src="/images/rasterizer/rate16.png" className="section-img2"/>
+              <img src={rate1} className="section-img2"/>
+              <img src={rate4} className="section-img2"/>
+              <img src={rate16} className="section-img2"/>
           </div>
       </div>
 
@@ -90,8 +125,8 @@ const graphics_content =
           </p>
           </div>
           <div className="section-images">
-              <img src="/images/rasterizer/robot.png" className="section-img2"/>
-              <img src="/images/rasterizer/myrobot.png" className="section-img2"/>
+              <img src={robot} className="section-img2"/>
+              <img src={myrobot} className="section-img2"/>
           </div>
       </div>
 
@@ -112,8 +147,8 @@ const graphics_content =
           </p>
           </div>
           <div className="section-images">
-              <img src="/images/rasterizer/triangle.png" className="section-img2"/>
-              <img src="/images/rasterizer/colorwheel.png" className="section-img2"/>
+              <img src={triangle} className="section-img2"/>
+              <img src={colorhweel} className="section-img2"/>
           </div>
       </div>
 
@@ -145,8 +180,8 @@ const graphics_content =
             </p>
           </div>
           <div className="section-images">
-              <img src="/images/rasterizer/nearest1.png" className="section-img2"/>
-              <img src="/images/rasterizer/nearest16.png" className="section-img2"/>
+              <img src={nearest1} className="section-img2"/>
+              <img src={nearest16} className="section-img2"/>
           </div>
       </div>
 
@@ -167,8 +202,8 @@ const graphics_content =
             </p>
           </div>
           <div className="section-images">
-              <img src="/images/rasterizer/bilinear1.png" className="section-img2"/>
-              <img src="/images/rasterizer/bilinear16.png" className="section-img2"/>
+              <img src={bilinear1} className="section-img2"/>
+              <img src={bilinear16} className="section-img2"/>
           </div>
       </div>
 
@@ -207,11 +242,11 @@ const graphics_content =
             </p>
           </div>
           <div className="section-images">
-              <img src="/images/rasterizer/lz_pn.png" className="section-img"/>
-              <img src="/images/rasterizer/lz_pl.png" className="section-img"/>
-              <img src="/images/rasterizer/ln_pn.png" className="section-img"/>
-              <img src="/images/rasterizer/ln_pl.png" className="section-img"/>
-              <img src="/images/rasterizer/tri.png" className="section-img"/>
+              <img src={lz_pn} className="section-img"/>
+              <img src={lz_pl} className="section-img"/>
+              <img src={ln_pn} className="section-img"/>
+              <img src={ln_pl} className="section-img"/>
+              <img src={tri} className="section-img"/>
           </div>
       </div>
     </div>
@@ -244,30 +279,11 @@ const graphics_content =
                 <li> It is common to chain together many low-order Bezier curves such as Piecewise cubic Bezier curves.
                 </li>
               </ul>
-              {/*            borrowing slideshow from https://themarklee.com/2013/12/26/simple-diy-responsive-slideshow-made-html5-css3-javascript/*/}
-              {/* <div className="diy-slideshow">
-                <figure className="show"><img src="/images/graphics_proj2/bc1_1.png" alt width="100%" />
-                  <figcaption>First evaluation</figcaption></figure>
-                <figure><img src="/images/graphics_proj2/bc1_2.png" alt width="100%" />
-                  <figcaption>Second evaluation</figcaption></figure>
-                <figure><img src="/images/graphics_proj2/bc1_3.png" alt width="100%" />
-                  <figcaption>Third evaluation</figcaption></figure>
-                <figure><img src="/images/graphics_proj2/bc1_4.png" alt width="100%" />
-                  <figcaption>Fourth evaluation</figcaption></figure>
-                <figure><img src="/images/graphics_proj2/bc1_5.png" alt width="100%" />
-                  <figcaption>Fourth evaluation showing curve</figcaption></figure>
-                <figure><img src="/images/graphics_proj2/bc1_6.png" alt width="100%" />
-                  <figcaption>With altered t value</figcaption></figure>
-                <figure><img src="/images/graphics_proj2/bc2_1.png" alt width="100%" />
-                  <figcaption>With moved points</figcaption></figure>
-                <span className="prev">«</span>
-                <span className="next">»</span>
-              </div> */}
               <p />
             </div>
             <div style={{height: '100%', width: '50%', display: 'block', float: 'right'}}>
-              <img src="/images/graphics_proj2/decasteljau1.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
-              <img src="/images/graphics_proj2/decasteljau2.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
+              <img src={decasteljau1} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
+              <img src={decasteljau2} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
             </div>
           </div>
           <h3 align="center">Part 2: Bezier surfaces with separable 1D de Casteljau subdivision</h3>
@@ -290,8 +306,8 @@ const graphics_content =
               <p />
             </div>
             <div style={{height: '100%', width: '50%', display: 'block', float: 'right'}}>
-              <img src="/images/graphics_proj2/bicubicbezier.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
-              <img src="/images/graphics_proj2/part2.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
+              <img src={bicubicbezier} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
+              <img src={part2} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
             </div>
           </div>
           <h3 align="center">Part 3: Average normals for half-edge meshes</h3>
@@ -317,8 +333,8 @@ const graphics_content =
               </p>
             </div>
             <div style={{height: '100%', width: '50%', display: 'block', float: 'right'}}>
-              <img src="/images/graphics_proj2/facenormals.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
-              <img src="/images/graphics_proj2/avgvertnormals.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
+              <img src={facenormals} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
+              <img src={avgvertnormals} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
             </div>
           </div>
           <h3 align="center">Part 4: Half-edge flip</h3>
@@ -334,8 +350,8 @@ const graphics_content =
               </p>
             </div>
             <div style={{height: '100%', width: '50%', display: 'block', float: 'right'}}>
-              <img src="/images/graphics_proj2/before4.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
-              <img src="/images/graphics_proj2/after4.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
+              <img src={before4} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
+              <img src={after4} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
             </div>
           </div>
           <h3 align="center">Part 5: Half-edge split</h3>
@@ -354,9 +370,9 @@ const graphics_content =
             <div style={{height: '100%', width: '50%', display: 'block', float: 'right'}}>
             </div>
             <div style={{height: '100%', width: '50%', display: 'block', float: 'right'}}>
-              <img src="/images/graphics_proj2/unaltered.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
-              <img src="/images/graphics_proj2/splits.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
-              <img src="/images/graphics_proj2/splitsnflips.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
+              <img src={unaltered} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
+              <img src={splits} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
+              <img src={splitsnflips} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
             </div>
           </div>
           <h3 align="center">Part 6: Loop subdivision for mesh upsampling</h3>
@@ -386,10 +402,10 @@ const graphics_content =
               <p />
             </div>
             <div style={{height: '100%', width: '50%', display: 'block', float: 'right'}}>
-              <img src="/images/graphics_proj2/6_1.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '50%', display: 'block'}} />
-              <img src="/images/graphics_proj2/6_2.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '50%', display: 'block'}} />
-              <img src="/images/graphics_proj2/6_3.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '50%', display: 'block'}} />
-              <img src="/images/graphics_proj2/6_4.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '50%', display: 'block'}} />
+              <img src={i6_1} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '50%', display: 'block'}} />
+              <img src={i6_2} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '50%', display: 'block'}} />
+              <img src={i6_3} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '50%', display: 'block'}} />
+              <img src={i6_4} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '50%', display: 'block'}} />
             </div>
           </div>
           <h3 align="center">Part 7: Fun with shaders</h3>
@@ -400,7 +416,7 @@ const graphics_content =
               </p>
             </div>
             <div style={{height: '100%', width: '50%', display: 'block', float: 'right'}}>
-              <img src="/images/graphics_proj2/phong.png" style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
+              <img src={phong} style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: '80%', display: 'block'}} />
             </div>
           </div>
         </div>

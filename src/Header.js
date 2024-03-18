@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from 'react-router-dom';
+import logo from './images/logos/logo_gold.svg';
 
 export default class Header extends Component {
   componentDidMount(){
@@ -27,7 +28,7 @@ export default class Header extends Component {
     return (
       <div className="header">
         <a href="/">
-          <img href="/" src="/images/logos/logo_gold.svg" alt="Jesse Paterson's Logo"></img>
+          <img href="/" src={logo} alt="Jesse Paterson's Logo"></img>
         </a>
 	      <ul className="menu">
 	        <li><NavLink exact={true} to="/" activeClassName="active">Home</NavLink></li>

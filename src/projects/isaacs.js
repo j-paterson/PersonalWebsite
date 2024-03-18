@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import planning from '../images/projects/isaacs/planning.jpg'
 
 const isaacs_content = <div className="project-content">
   <h2 className="subheading">Immersive Semi-Autonomous Aerial Command System</h2>
@@ -33,7 +34,7 @@ const isaacs_content = <div className="project-content">
       of connection loss, the ability to set camera angle and a path through nodes that could be moved through 3d space and angled similar to a Bézier
       curve. We put this plan into motion and prototyped a Unity application over the next few months.
     </p>
-    <img className="img-center" src="/images/isaacs/planning.jpg" width="400px" alt="planning"/><br/>
+    <img className="img-center" src={planning} width="400px" alt="planning"/><br/>
     <p>
       After completing a Minimal Viable Product for the interface, the pressure came on for our SLAM (Simultaneous Location and Mapping) team, the group responsible
       for creating a method of mapping the terrain the drone and giving it a relative location to its environment. Several graduate students joined the project and we worked
